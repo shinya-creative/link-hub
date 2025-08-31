@@ -13,6 +13,11 @@ module.exports = {
       react({ jsxRuntime: 'automatic', jsxImportSource: 'react' }),
       vanillaExtractPlugin(),
     ];
+    // Ensure React is available for any JSX that uses the classic runtime
+    config.esbuild = {
+      ...(config.esbuild || {}),
+      jsxInject: "import React from 'react'",
+    };
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
