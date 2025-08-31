@@ -20,7 +20,7 @@ export default function BookmarkForm() {
       return;
     }
 
-    // URLの形式をチェック
+    // URLの形式チェック
     try {
       const urlObject = new URL(url);
       if (urlObject.protocol !== 'http:' && urlObject.protocol !== 'https:') {
@@ -40,7 +40,7 @@ export default function BookmarkForm() {
         createdAt: serverTimestamp(),
       });
       
-      // フォームをリセット
+      // フォームリセット
       setUrl('');
       setTitle('');
       setTags('');
