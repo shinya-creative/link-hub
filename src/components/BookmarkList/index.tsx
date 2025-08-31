@@ -1,13 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { collection, query, onSnapshot, orderBy } from 'firebase/firestore';
+import { collection, query, onSnapshot, orderBy, doc, deleteDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
 import { Bookmark } from '@/types/bookmark';
-import BookmarkCard from './BookmarkCard';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import CircularProgress from '@mui/material/CircularProgress';
+import BookmarkCard from '../BookmarkCard';
+import * as styles from './style.css.ts';
 
 export default function BookmarkList() {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
@@ -30,23 +28,32 @@ export default function BookmarkList() {
     return () => unsubscribe();
   }, []);
 
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteDoc(doc(db, 'bookmarks', id));
+    } catch (error) {
+      console.error("Error deleting document: ", error);
+      alert('ブックマークの削除中にエラーが発生しました。');
+    }
+  };
+
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-        <CircularProgress />
-      </Box>
+      <div className={styles.loaderContainer}>
+        <div className={styles.loader}></div>
+      </div>
     );
   }
 
   return (
-    <Box sx={{ width: '100%', maxWidth: '800px', mt: 4 }}>
+    <div className={styles.container}>
       {bookmarks.length === 0 ? (
-        <Typography>ブックマークはまだありません。</Typography>
+        <p className={styles.emptyMessage}>ブックマークはまだありません。</p>
       ) : (
         bookmarks.map((bookmark) => (
-          <BookmarkCard key={bookmark.id} bookmark={bookmark} />
+          <BookmarkCard key={bookmark.id} bookmark={bookmark} onDelete={handleDelete} />
         ))
       )}
-    </Box>
+    </div>
   );
 }
