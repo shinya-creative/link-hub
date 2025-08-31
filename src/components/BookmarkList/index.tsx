@@ -5,7 +5,7 @@ import { collection, query, onSnapshot, orderBy, doc, deleteDoc } from 'firebase
 import { db } from '@/firebase';
 import { Bookmark } from '@/types/bookmark';
 import BookmarkCard from '../BookmarkCard';
-import * as styles from './style.css.ts';
+import * as styles from './style.css';
 
 export default function BookmarkList() {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);

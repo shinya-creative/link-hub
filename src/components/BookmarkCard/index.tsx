@@ -1,7 +1,7 @@
 'use client';
 
 import { Bookmark } from '@/types/bookmark';
-import * as styles from './style.css.ts';
+import * as styles from './style.css';
 
 interface BookmarkCardProps {
   bookmark: Bookmark;
