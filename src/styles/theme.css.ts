@@ -15,6 +15,7 @@ export const vars = createGlobalTheme(':root', {
     thinFont: '#9CA3AF',
 
     border: '#D9D9D9',
+    buttonHover: '#C4C4C4',
     shadow: 'rgba(0, 0, 0, 0.1)',
 
     danger: '#E22323',
@@ -24,8 +25,8 @@ export const vars = createGlobalTheme(':root', {
     // Grays
     gray100: '#F3F4F6',
     gray200: '#E5E7EB',
-    gray300: '#D1D5DB',
-    gray400: '#9CA3AF',
+    gray300: '#DCDCDC',
+    gray400: '#C4C4C4',
     gray500: '#6B7280',
     gray600: '#4B5563',
     gray700: '#374151',
