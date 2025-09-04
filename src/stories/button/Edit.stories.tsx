@@ -1,42 +1,67 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// import React from 'react'; // JSX 自動ランタイム使用時は不要
+import type React from 'react';
+import { vars } from '../../styles/theme.css';
 
+type ButtonState = 'normal' | 'hover';
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  state?: ButtonState;
+};
 
-// 具体的なコンポーネントが未決定なら暫定の Stub を使えます。
-// label または children をシンプルに表示します。
-const Stub = ({ label = 'Edit', ...rest }: { label?: string } & Record<string, unknown>) => (
-  <button
-    style={{
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 8,
-      padding: '8px 12px',
-      border: '1px solid #e5e7eb',
-      borderRadius: 8,
-      background: '#fff',
-      cursor: 'pointer',
-    }}
-    {...rest}
-  >
-    {/* シンプルな代替アイコン */}
-    <span aria-hidden>✏️</span>
-    <span>{label}</span>
-  </button>
-);
+const Stub = ({ state = 'normal', style, ...rest }: ButtonProps) => {
+  const iconColor = state === 'hover' ? vars.colors.strongFont : vars.colors.font;
+  const visualStyles: React.CSSProperties = {
+    background: state === 'hover' ? vars.colors.gray400 : vars.colors.gray300,
+    color: iconColor,
+    transition: 'background-color 120ms ease, transform 80ms ease, color 120ms ease',
+  } as const;
 
-// 下記 meta を編集:
-// - title: サイドバーに表示されるパス (例: 'Atoms/Button')
-// - component: 対象コンポーネント
-// - parameters/argTypes: ドキュメントや操作の設定
+  return (
+    <button
+      style={{
+        display: 'inline-flex',
+        width: '32px',
+        height: '32px',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: vars.radii.full,
+        border: 'none',
+        cursor: 'pointer',
+        ...visualStyles,
+        ...style,
+      }}
+      {...rest}
+    >
+      <span aria-hidden style={{ width: 16, height: 16, lineHeight: 0, display: 'inline-flex' }}>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden
+          focusable="false"
+          style={{ display: 'block' }}
+        >
+          <path
+            d="M15.74 3.59283C16.0867 3.24622 16.0867 2.66852 15.74 2.33967L13.6603 0.259964C13.3315 -0.0866546 12.7538 -0.0866546 12.4072 0.259964L10.7718 1.8864L14.1047 5.21927M0 12.6671V16H3.33287L13.1626 6.16137L9.82975 2.8285L0 12.6671Z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+    </button>
+  );
+};
+
 const meta: Meta<typeof Stub> = {
-  title: 'Category/Button',
-  component: Stub, // replace with YourComponent
+  title: 'Category/Button/Edit',
+  component: Stub,
   parameters: {
     layout: 'centered',
   },
   argTypes: {
-  // onClick: { action: 'clicked' }, // Actions アドオン連携
-  // color: { control: 'color' },    // Controls で色を操作
+    state: {
+      control: { type: 'radio' },
+      options: ['normal', 'hover'],
+    },
   },
 };
 
@@ -44,41 +69,8 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-// 基本のストーリー (デフォルト args 使用)
-export const Primary: Story = {
+export const Edit: Story = {
   args: {
-    label: 'Primary',
+    state: 'normal',
   },
 };
-
-// バリエーション例
-export const Secondary: Story = {
-  name: 'Secondary',
-  args: {
-    label: 'Secondary',
-  },
-  parameters: {
-  // backgrounds: { default: 'dark' }, // 背景切替などの例
-  },
-};
-
-// カスタム render 例: レイアウトラッパーや複合表示に便利
-export const CustomRender: Story = {
-  args: {
-    label: 'With custom render',
-  },
-  render: (args) => (
-    <div style={{ padding: 16, background: '#f9fafb' }}>
-      <Stub {...args} />
-    </div>
-  ),
-};
-
-// play 関数の例: 軽量なインタラクションテスト用
-// export const WithPlay: Story = {
-//   args: { label: 'Click me' },
-//   play: async ({ canvasElement }) => {
-//     const canvas = within(canvasElement);
-//     await userEvent.click(await canvas.findByText('Click me'));
-//   },
-// };
