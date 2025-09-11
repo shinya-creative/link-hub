@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import type React from 'react';
 import { vars } from '../../styles/theme.css';
 
+// 'active' もコントロールで指定されていたので型に追加
 type ButtonState = 'none' | 'hover' | 'active';
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   state?: ButtonState;
