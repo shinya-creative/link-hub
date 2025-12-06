@@ -23,12 +23,12 @@ export const variant = styleVariants({
 export const icon = style({
     width: '36px',
     height: '36px',
-    color: vars.colors.gray600,
+    color: vars.colors.font,
 });
 
 export const text = style({
     fontSize: '32px',
     fontWeight: vars.fontWeights.regular,
-    color: vars.colors.gray600,
+    color: vars.colors.font,
     lineHeight: 1,
 });
