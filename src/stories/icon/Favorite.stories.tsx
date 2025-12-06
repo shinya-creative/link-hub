@@ -74,7 +74,7 @@ const Stub = ({ state = 'none', style, ...rest }: ButtonProps) => {
 };
 
 const meta: Meta<typeof Stub> = {
-  title: 'Category/Button/Favorite',
+  title: 'Icon/Favorite',
   component: Stub,
   parameters: { layout: 'centered' },
   argTypes: {

@@ -52,7 +52,7 @@ const Stub = ({ state = 'normal', style, ...rest }: ButtonProps) => {
 };
 
 const meta: Meta<typeof Stub> = {
-  title: 'Category/Button/Edit',
+  title: 'Icon/Edit',
   component: Stub,
   parameters: {
     layout: 'centered',
