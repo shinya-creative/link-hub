@@ -5,11 +5,11 @@ export const vars = createGlobalTheme(':root', {
     primary: '#2563EB',
     secondary: '#EFF6FF',
     hover: '#1D4ED8',
-    
+
     background: '#F8FAFC',
     surface: '#FFFFFF',
     form: '#F0F0F0',
-    
+
     font: '#6B7280',
     strongFont: '#1F2937',
     thinFont: '#9CA3AF',
@@ -19,8 +19,14 @@ export const vars = createGlobalTheme(':root', {
     shadow: 'rgba(0, 0, 0, 0.1)',
 
     danger: '#E22323',
+    dangerBackground: '#FEF2F2',
+    dangerHover: '#B91C1C',
     success: '#35B335',
+    successBackground: '#F2FEF2',
+    successHover: '#22863A',
     warning: '#DCB646',
+    warningBackground: '#FEF8F2',
+    warningHover: '#C2810C',
 
     // Grays
     gray100: '#F3F4F6',
