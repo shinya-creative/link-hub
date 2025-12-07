@@ -16,8 +16,7 @@ export const vars = createGlobalTheme(':root', {
 
     border: '#D9D9D9',
     buttonHover: '#C4C4C4',
-    shadow: 'rgba(0, 0, 0, 0.1)',
-
+    shadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
     danger: '#E22323',
     dangerBackground: '#FEF2F2',
     dangerHover: '#B91C1C',
