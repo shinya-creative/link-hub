@@ -53,6 +53,7 @@ export const vars = createGlobalTheme(':root', {
     'none': '0',
     'xs': '4px',
     'sm': '8px',
+    'smd': '12px',
     'md': '16px',
     'lg': '24px',
     'xl': '32px',
@@ -62,6 +63,7 @@ export const vars = createGlobalTheme(':root', {
     'sm': '14px',
     'md': '16px',
     'lg': '18px',
+    'lxl': '20px',
     'xl': '24px',
   },
   fontWeights: {
