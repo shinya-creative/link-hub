@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ThemeRegistry from '@/theme/ThemeRegistry';
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Link Hub",
@@ -13,9 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>
-        <ThemeRegistry>{children}</ThemeRegistry>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
