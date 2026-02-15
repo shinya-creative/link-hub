@@ -5,11 +5,11 @@ export const vars = createGlobalTheme(':root', {
     primary: '#2563EB',
     secondary: '#EFF6FF',
     hover: '#1D4ED8',
-    
+
     background: '#F8FAFC',
     surface: '#FFFFFF',
     form: '#F0F0F0',
-    
+
     font: '#6B7280',
     strongFont: '#1F2937',
     thinFont: '#9CA3AF',
@@ -64,7 +64,7 @@ export const vars = createGlobalTheme(':root', {
     'medium': '500',
     'bold': '700',
   },
-  radii: {
+  radius: {
     'sm': '4px',
     'md': '8px',
     'lg': '16px',

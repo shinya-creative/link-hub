@@ -8,7 +8,7 @@ export const loginButton = style({
     padding: `${vars.space.md} ${vars.space.lg}`,
     backgroundColor: vars.colors.primary,
     color: '#FFFFFF',
-    fontSize: vars.fontSizes.lxl,
+    fontSize: vars.fontSizes.xl,
     fontWeight: vars.fontWeights.bold,
     border: 'none',
     borderRadius: vars.radius.md,
