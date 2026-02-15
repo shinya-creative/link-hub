@@ -10,7 +10,7 @@ export const form = style({
   margin: `${vars.space.xl} auto`,
   padding: vars.space.lg,
   backgroundColor: vars.colors.surface,
-  borderRadius: vars.radii.md,
+  borderRadius: vars.radius.md,
   border: `1px solid ${vars.colors.border}`,
 });
 
@@ -29,7 +29,7 @@ export const label = style({
 const inputBase = style({
   width: '100%',
   padding: `${vars.space.sm} ${vars.space.md}`,
-  borderRadius: vars.radii.md,
+  borderRadius: vars.radius.md,
   border: `1px solid ${vars.colors.border}`,
   backgroundColor: vars.colors.background,
   fontSize: vars.fontSizes.md,
@@ -61,7 +61,7 @@ export const submitButton = style({
   backgroundColor: vars.colors.primary,
   color: 'white',
   border: 'none',
-  borderRadius: vars.radii.md,
+  borderRadius: vars.radius.md,
   fontSize: vars.fontSizes.md,
   fontWeight: vars.fontWeights.bold,
   cursor: 'pointer',

@@ -16,11 +16,16 @@ export const vars = createGlobalTheme(':root', {
 
     border: '#D9D9D9',
     buttonHover: '#C4C4C4',
-    shadow: 'rgba(0, 0, 0, 0.1)',
-
+    shadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
     danger: '#E22323',
+    dangerBackground: '#FEF2F2',
+    dangerHover: '#B91C1C',
     success: '#35B335',
+    successBackground: '#F2FEF2',
+    successHover: '#22863A',
     warning: '#DCB646',
+    warningBackground: '#FEF8F2',
+    warningHover: '#C2810C',
 
     // Grays
     gray100: '#F3F4F6',
