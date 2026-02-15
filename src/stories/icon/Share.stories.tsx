@@ -52,7 +52,7 @@ const Stub = ({ state = 'normal', style, ...rest }: ButtonProps) => {
 };
 
 const meta: Meta<typeof Stub> = {
-  title: 'Category/Button/Share',
+  title: 'Icon/Share',
   component: Stub,
   parameters: {
     layout: 'centered',
