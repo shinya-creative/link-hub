@@ -32,7 +32,7 @@ const Stub = ({ state = 'none', style, ...rest }: ButtonProps) => {
         height: 32,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: vars.radii.full,
+        borderRadius: vars.radius.full,
         border: 'none',
         cursor: 'pointer',
         opacity: isNone ? 0.2 : 1,
