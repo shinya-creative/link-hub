@@ -4,7 +4,7 @@ import { vars } from '@/styles/theme.css';
 export const container = style({
     width: '72px',
     height: '72px',
-    borderRadius: vars.radii.full,
+    borderRadius: vars.radius.full,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

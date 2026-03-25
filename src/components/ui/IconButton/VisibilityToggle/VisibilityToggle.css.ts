@@ -9,7 +9,7 @@ export const button = style({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: vars.radii.sm,
+    borderRadius: vars.radius.sm,
     transition: 'background-color 0.2s ease',
     color: vars.colors.font,
     selectors: {

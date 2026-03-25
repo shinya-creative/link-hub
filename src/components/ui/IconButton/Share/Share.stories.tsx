@@ -23,7 +23,7 @@ const Stub = ({ state = 'normal', style, ...rest }: ButtonProps) => {
         height: '32px',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: vars.radii.full,
+        borderRadius: vars.radius.full,
         border: 'none',
         cursor: 'pointer',
         ...visualStyles,
