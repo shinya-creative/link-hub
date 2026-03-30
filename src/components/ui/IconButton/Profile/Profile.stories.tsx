@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Profile } from '@/components/Feature/User/Profile';
+import { Profile } from '@/components/ui/IconButton/Profile';
 
 const meta = {
     title: 'Icon/Profile',
