@@ -1,5 +1,5 @@
-import BookmarkForm from '@/components/BookmarkForm';
-import BookmarkList from '@/components/BookmarkList';
+import { BookmarkForm } from '@/components/Feature/Bookmark/BookmarkForm/BookmarkForm';
+import { BookmarkList } from '@/components/Feature/Bookmark/BookmarkList/BookmarkList';
 import * as styles from './page.css';
 
 export default function HomePage() {
